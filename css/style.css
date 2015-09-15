@@ -1,0 +1,323 @@
+a{
+	text-decoration: none;
+}
+.left-side{
+    width: 50%;
+    display: block;
+    float:left !important;
+	min-height:100vh;
+}
+.right-side{
+    width: 50%;
+    display: block;
+    float:right !important;
+	background-color:#f6f6f6;
+	min-height:100vh;
+}
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+.menu-icn{
+	line-height:40px;
+	width:40px;
+	height:40px;
+	display:block;
+	text-align:center;
+	font-size:24px;
+	color:#292929;
+}
+.upload-icn{
+	line-height:40px;
+	width:40px;
+	height:40px;
+	display:block;
+	text-align:center;
+	font-size:24px;
+	color:#292929;
+}
+.cart-icn{
+	line-height:40px;
+	width:40px;
+	height:40px;
+	display:block;
+	text-align:center;
+	font-size:24px;
+	color:#292929;
+}
+.user-icn{
+	line-height:40px;
+	width:40px;
+	height:40px;
+	display:block;
+	text-align:center;
+	font-size:24px;
+	color:#292929;
+}
+.has-tooltip {
+    position: relative;
+    text-align: center;
+    -webkit-transform: translateZ(0); /* webkit flicker fix */
+    -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+    
+}
+
+.has-tooltip .tooltip {
+    background: #656565;
+    color: #fff;
+	font-size:12px;
+	line-height:16px !important;
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 10px !important;
+    position: absolute;
+    visibility: hidden;
+    max-width: 160px;
+	min-width:80px;
+	left: -50%;
+	margin-left:-10px;
+    -webkit-transform: translateY(10px);
+       -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+         -o-transform: translateY(10px);
+            transform: translateY(10px);
+    -webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+        -ms-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+        -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+         -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.has-tooltip .tooltip:before {
+    bottom: -20px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.has-tooltip .tooltip:after {
+    border-left: solid transparent 6px;
+    border-right: solid transparent 6px;
+    border-bottom: solid #656565 6px;
+    top:-6px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    margin-left: -6px;
+    position: absolute;
+    width: 0;
+}
+  
+.has-tooltip:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+}
+.vert-carousel{
+	width: 30%;
+	height: calc(100vh - 40px);
+	float: left;
+	overflow-y: hidden;
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.vert-carousel .car-item{
+	margin-bottom:10px;
+	display:inline-block;
+}
+.vert-carousel .car-item img{
+	width: 100%;
+	height: auto;
+}.vert-carousel .car-item .car-item-name {
+	font-family: Open Sans;
+	font-weight: 100;
+	font-size: 0.9em;
+	line-height: 0.9em;
+}
+.top-navigation-bar {
+	width: 100%;
+	display: inline-block;
+}
+.photo-player {
+	width: 70%;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.updown.labelLike {
+	background-color: rgba(0,198,45,0.90);
+	top: 35%;
+    right: 10%;
+    left: auto;
+	
+}
+.updown.labelDisLike {
+	background-color: rgba(255,40,44,0.90);
+	top: 35%;
+	left: 10%;
+}
+
+.updown{
+	position: absolute;
+	color: white;
+	font-weight: bold;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	line-height: 100px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Akz-LightCond;
+	font-size: 70px;
+	top: auto;
+}
+
+.labelLike{
+	top: 50px;
+	right: 10px;
+	left: auto;
+	display: none;
+}
+
+.labelDisLike{
+    top:50px;
+    left:10px;
+    right:0;
+    display: none;
+}
+
+.no-more-items{
+    display: none !important;
+}
+
+.clear{
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#leftMenu,#leftMenuShop{
+    position: fixed;
+    width: 300px;
+    background: red;
+    top:0;
+    left: 0;
+    transform: translateX(-300px);
+    ms-transform: translateX(-300px);
+    -webkit-transform:translateX(-300px);
+    
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease;
+    height: 100%;
+    z-index: 5000;
+}
+
+#rightMenu{
+    position: fixed;
+    width: 300px;
+    background: red;
+    top:0;
+    right: 0px;
+    height: 100%;
+    
+    transform: translateX(300px);
+    ms-transform: translateX(300px);
+    -webkit-transform:translateX(300px);
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+#wrapper{
+      transform: translateX(0px);
+    ms-transform: translateX(0px);
+    -webkit-transform:translateX(0px);
+    transition-duration: 0.3s;
+    transition-property: width,left;
+    position: relative;
+    left: 0;
+}
+.pull-right-tab,
+.pull-left-tab{
+    display: none;
+}
+
+.pull-left-shop{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+#leftMenuShop{
+    display: none;
+}
+@media(max-width: 768px){
+    #leftMenuShop{
+        display: block;
+    }
+    .left-side{
+        width: 100%;
+        top:0;
+        left: 0;
+        position: fixed;
+        transition-duration: 1.0s;
+        transition-property: right,left;
+        z-index: 3999
+    }
+    
+    .right-side{
+        width: 100%;
+        top:0;
+        left: 100%;
+        position: fixed;
+        transition-duration: 1.0s;
+        transition-property: right,left;
+        z-index: 4000;
+    }
+
+    .pull-right-tab,
+    .pull-left-tab{
+        display: inline-block;
+        top:0;
+        position: absolute;
+        cursor: pointer;
+    }
+    
+    .pull-left-tab{
+        left: 40px;
+    }
+    
+    .pull-right-tab{
+        right: 40px;
+    }
+    
+
+    
+}
+
+.slick-vertical .slick-slide
+{
+width: 100%;
+    height: 300px;
+}
