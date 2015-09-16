@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    var menuWidth = 200;
     var wrapperWidth = $("#wrapper").width();
     $("#wrapper").css("width",wrapperWidth);
     $(document).on("click",".pull-left",function(){
@@ -7,12 +8,11 @@ $(document).ready(function(){
         if(left!="matrix(1, 0, 0, 1, 0, 0)"){
              $("#leftMenu").css("transform","translateX(0px)");
              var currentWidth = $("#wrapper").width();
-            currentWidth-=200;
+            currentWidth-=menuWidth;
         if($(window).width()<768)
         {
           $(".left-side").css("width",currentWidth);
           $(".left-side").css("float","right");
-            $(".left-side").css("left","200px");
         }
             $("#wrapper").css("width",currentWidth);
             $("#wrapper").css("float","right");
@@ -21,9 +21,9 @@ $(document).ready(function(){
             console.log(currentWidth);
         }
         else{
-            $("#leftMenu").css("transform","translateX(-200px)");
+            $("#leftMenu").css("transform","translateX(-"+menuWidth+"px)");
                 var currentWidth = $("#wrapper").width();
-            currentWidth+=200;
+            currentWidth+=menuWidth;
          if($(window).width()<768)
          {
            $(".left-side").css("width",currentWidth);
@@ -44,11 +44,11 @@ $(document).ready(function(){
            
         if(left!="matrix(1, 0, 0, 1, 0, 0)"){
              $("#leftMenuShop").css("transform","translateX(0px)");
-            $("#wrapper").css("transform","translateX(300px)");
+            $(".right-side").css("left","175px");
         }
         else{
-            $("#leftMenuShop").css("transform","translateX(-300px)");
-            $("#wrapper").css("transform","translateX(0px)");
+            $("#leftMenuShop").css("transform","translateX(-"+menuWidth+"px)");
+            $(".right-side").css("left","0px");
         }
       }
     });
@@ -60,7 +60,7 @@ $(document).ready(function(){
             var right = $("#rightMenu").css("transform");
         if(right!="matrix(1, 0, 0, 1, 0, 0)"){
              $("#rightMenu").css("transform","translateX(0px)");
-            $("#wrapper").css("left","-200px");
+            $("#wrapper").css("left","-"+menuWidth+"px");
         }
         else{
             $("#rightMenu").css("transform","translateX(300px)");
@@ -71,11 +71,11 @@ $(document).ready(function(){
    
      $(document).on("click",".pull-right-tab",function(){
         $(".right-side").css("left", "0%");
-         //$(".left-side").css("left", "-100%");
+         $(".left-side").css("left", "-100%");
      });
     
       $(document).on("click",".pull-left-tab",function(){
         $(".right-side").css("left", "100%");
-        // $(".left-side").css("left", "0%");
+        $(".left-side").css("left", "0%");
      });
 });
