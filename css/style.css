@@ -1,4 +1,27 @@
+.elasticstack li {
+    position: absolute;
+    z-index: 1;
+    width: 560px;
+    height: 560px;
+    box-shadow: 0 10px 7px -7px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    cursor: pointer;
+    -webkit-transform: translate3d(0,0,-180px);
+    transform: translate3d(0,0,-180px);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
 
+.competition-mtitle{
+    color: #FFAE00;
+    text-align: center;
+    font-size: 19px;
+    position: absolute;
+    z-index: 9999;
+    transition-duration: 1.0s, 1.0s;
+    position: absolute;
+}
 a{
 	text-decoration: none;
 }
@@ -377,6 +400,8 @@ a{
 width: 100%;
 height: 300px;
 }
+
+
 
 @media (max-width:480px){
 }

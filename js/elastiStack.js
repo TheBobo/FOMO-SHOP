@@ -93,13 +93,13 @@
 		if( item2 ) {
 			item2.style.opacity = 1;
 			item2.style.zIndex = 3;
-			setTransformStyle( item2, is3d ? 'translate3d(0,0,-60px)' : 'translate(0,0)' );
+			setTransformStyle( item2, is3d ? 'translate3d(10px,10px,0 )' : 'translate(0,0)' );
 		}
 
 		if( item3 ) {
 			item3.style.opacity = 1;
 			item3.style.zIndex = 2;
-			setTransformStyle( item3, is3d ? 'translate3d(0,0,-120px)' : 'translate(0,0)' );
+			setTransformStyle( item3, is3d ? 'translate3d(20px,20px,0px)' : 'translate(0,0)' );
 		}
 	};
 
@@ -130,12 +130,12 @@ ElastiStack.prototype._moveAway = function( instance ) {
 		if( item2 ) {
 			classie.add( item2, 'move-back' );
 			classie.add( item2, 'animate' );
-			setTransformStyle( item2, is3d ? 'translate3d(0,0,-60px)' : 'translate(0,0)' );
+			setTransformStyle( item2, is3d ? 'translate3d(10px,10px,0px)' : 'translate(0,0)' );
 		}
 		if( item3 ) {
 			classie.add( item3, 'move-back' );
 			classie.add( item3, 'animate' );
-			setTransformStyle( item3, is3d ? 'translate3d(0,0,-120px)' : 'translate(0,0)' );
+			setTransformStyle( item3, is3d ? 'translate3d(20px,20px,0px)' : 'translate(0,0)' );
 		}
 
 		// after transition ends..
@@ -199,12 +199,12 @@ ElastiStack.prototype._moveAway = function( instance ) {
 		if( item2 ) {
 			classie.add( item2, 'move-back' );
 			classie.add( item2, 'animate' );
-			setTransformStyle( item2, is3d ? 'translate3d(0,0,-60px)' : 'translate(0,0)' );
+			setTransformStyle( item2, is3d ? 'translate3d(10px,10px,0px)' : 'translate(0,0)' );
 		}
 		if( item3 ) {
 			classie.add( item3, 'move-back' );
 			classie.add( item3, 'animate' );
-			setTransformStyle( item3, is3d ? 'translate3d(0,0,-120px)' : 'translate(0,0)' );
+			setTransformStyle( item3, is3d ? 'translate3d(20px,20px,0px)' : 'translate(0,0)' );
 		}
 	};
 	ElastiStack.prototype._onDragStart = function( instance, event, pointer ) {
@@ -243,6 +243,127 @@ ElastiStack.prototype._moveAway = function( instance ) {
 		}
 	};
 
+        function MoveCompetitionTitle( instance ){
+            debugger;
+        var startCompetition = $(instance.element).find(".labelLike").css("display");
+            
+            if(startCompetition == "block" ){
+                  if($(".competition-mtitle").text() == "" && $(instance.element).is(':first-child')){ 
+                    oldStatus="block";
+                    var competitionName = $(instance.element).find("h5");
+                    //alert(competitionName.position().left + " " + competitionName.position().top);
+                    var offset = $(competitionName).offset();
+                     
+                      var width = $(competitionName).css("width");
+                      var titlePosition = $("#numero1").offset();
+                      titlePosition.top = Math.abs(titlePosition.top-offset.top);
+                      if($(document).width()>769){
+                        titlePosition.left = Math.abs(titlePosition.left-offset.left)-100;
+                      } 
+                      else{
+                        titlePosition.left =  titlePosition.left-0;
+                      }
+                    $(".competition-mtitle").css("transition","width: 0s, left 0s, top 0s");
+                    $(".competition-mtitle").text($(competitionName).text());
+                    var widthCurrent = parseInt($(".competition-mtitle").css("width"));
+                    var widthTit = parseInt($(instance.element).find("h5").css("width"));
+                    var dif = Math.abs(widthCurrent-widthTit);
+                    var difDevide2 = dif/2;
+                    var leftM = $(instance.element).find("h5").offset().left+parseInt($(instance.element).find("h5").css("margin-left"))+parseInt($(instance.element).find("h5").css("padding-left"))+difDevide2;
+                      
+                    $(".competition-mtitle").css("top",offset.top);
+                    $(".competition-mtitle").css("left",leftM);
+                    
+                    $(".competition-mtitle").css("opacity",1);
+                    //$(instance.element).find("h5").css("opacity",0);
+                    
+                      if($(document).width()>769){
+                          var tt=$(".left-side").find("h3")[0]
+                          var left = $(tt).offset().left+parseInt($(tt).css("margin-left"))+parseInt($(tt).css("padding-left"))+parseInt($(tt).css("margin-right"))+parseInt($(tt).css("padding-right"));//+$(tt).width();
+                          Animate(0.5,left,$(tt).offset().top+3-parseInt($(tt).css("margin-bottom")),1.2,3)
+                    }
+                    else{
+                      var ob =$(".top-navigation-bar").find("h3");
+                        debugger;
+                      var fontSize=  $(ob).css("font-size");
+                      //fontSize = parseInt(fontSize)*2;
+                      $(".competition-mtitle").css("font-size",fontSize);
+                        debugger;
+                      var left = parseInt( $(ob).css("margin-left"))+parseInt($(ob).offset().left);
+                        var top =$(ob).offset().top+20+parseInt($(ob).css("font-size"));
+                       // $(".competition-mtitle").css("left",left);
+                       // $(".competition-mtitle").css("top",top);
+                        
+                        top =$(ob).offset().top+30;
+                        
+                        left=parseInt(width)/2;
+                        if($(document).width()<400){
+                            left=parseInt(width)/4;
+                        }
+                        if($(document).width()<769 && $(document).width()>480){
+                            var tt=$(".top-navigation-bar").find("h3")[0]
+                            var left = $(tt).offset().left+parseInt($(tt).css("padding-left"));
+                            left=1*left;
+                            
+                          Animate(0.5,left,25,1.2,2.5);
+                        }
+                        else if($(document).width()<480 && $(document).width()>420){
+                            var tt=$(".mobile-inner-pages").find("h3")[0]
+                            var left = $(tt).offset().left+parseInt($(tt).css("padding-left"));
+                            Animate(0.5,left,25,0.95,2.5)
+                            
+                        }
+                          else if($(document).width()<420 && $(document).width()>319){
+                              var tt=$(".mobile-inner-pages").find("h3")[0]
+                              var left = $(tt).offset().left+parseInt($(tt).css("padding-left"));
+                              Animate(0.5,left,20,0.7,2.5)
+                        }
+						  else if($(document).width()<320){
+                             var tt=$(".mobile-inner-pages").find("h3")[0]
+                             var left = $(tt).offset().left+parseInt($(tt).css("padding-left"));
+                             Animate(0.5,left,20,0.6,2.5)
+                        }
+                    }
+                      
+                    //$(".competition-mtitle").css("transition", "font-size:1.0s")
+                   // $(".competition-mtitle").css("transform","scale(0.5,0.5)");
+                    
+                    
+                }
+            }
+    }
+    
+    function Animate(timeDuration,leftPosition,topPosition,zoomOut,zoomIn){
+         //$(".competition-mtitle").css("font-size","19px");
+        var fontSize = parseInt($(".competition-mtitle").css("font-size"));
+        fontSize*=zoomIn;
+        $(".competition-mtitle").css("transition","font-size "+timeDuration+"s, left "+timeDuration+"s, top "+timeDuration+"s");
+         var cw = $(".competition-mtitle").width();
+        cw=(cw*zoomIn-1)/2/2;
+        var cL = parseInt($(".competition-mtitle").css("left"));
+       cL=cL-cw;
+        debugger;
+        //todo fontsize apply dinamicly
+       
+         $(".competition-mtitle").css("font-size",fontSize+"px");
+         $(".competition-mtitle").css("left",cL)
+        //$(".competition-mtitle").css("transition-duration", timeDuration+"s");
+        //$(".competition-mtitle").css("transform"," scale("+zoomIn+","+zoomIn+"");
+      
+        var timeDurationJS =  timeDuration*1000;
+        setTimeout(function () {
+                 debugger;   
+        $(".competition-mtitle").css("top",topPosition+"px");
+        $(".competition-mtitle").css("left",leftPosition+"px");
+    fontSize=fontSize/zoomIn*zoomOut;
+             if(fontSize<14){
+            fontSize=14;
+        }
+    $(".competition-mtitle").css("font-size",fontSize+"px");
+        //$(".competition-mtitle").css("transform","translate( "+leftPosition+"px, "+topPosition+"px) scale("+zoomOut+","+zoomOut+"");
+        //$(".competition-mtitle").css("width","auto");
+    }, timeDurationJS);
+    }
     
       function RemoveItemsReturnLeftItemsCount(inst){
           var tt = inst.element;
@@ -294,10 +415,10 @@ ElastiStack.prototype._moveAway = function( instance ) {
                 
             }
             else if(instance.position.x > 0 && Math.abs(instance.position.x)>showIcons){
-                
+                  
                 instance.element.getElementsByClassName("updown")[0].style.display="block";
                 instance.element.getElementsByClassName("updown")[1].style.display="none";
-                
+                MoveCompetitionTitle(instance);
             }
             else{
                  instance.element.getElementsByClassName("updown")[0].style.display="none";
@@ -310,7 +431,7 @@ ElastiStack.prototype._moveAway = function( instance ) {
 			// the second and third items also move
 			var item2 = this._secondItem(), item3 = this._thirdItem();
 			if( item2 ) {
-				setTransformStyle( item2, is3d ? 'translate3d(' + ( instance.position.x * .6 ) + 'px,' + ( instance.position.y * .6 ) + 'px, -60px)' : 'translate(' + ( instance.position.x * .6 ) + 'px,' + ( instance.position.y * .6 ) + 'px)' );
+				setTransformStyle( item2, is3d ? 'translate3d(' + ( instance.position.x * .6 ) + 'px,' + ( instance.position.y * .6 ) + 'px, 60px) ' : 'translate(' + ( instance.position.x * .6 ) + 'px,' + ( instance.position.y * .6 ) + 'px)' );
 			}
 			if( item3 ) {
 				setTransformStyle( item3, is3d ? 'translate3d(' + ( instance.position.x * .3 ) + 'px,' + ( instance.position.y * .3 ) + 'px, -120px)' : 'translate(' + ( instance.position.x * .3 ) + 'px,' + ( instance.position.y * .3 ) + 'px)' );
