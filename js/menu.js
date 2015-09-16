@@ -1,10 +1,3 @@
-jQuery(window).load(function () {
-
-    setTimeout(function () {
-        $(".vc").width("30%");
-    }, 100);
-
-});
 $(document).ready(function(){
     var menuWidth = 200;
     var wrapperWidth = $("#wrapper").width();
