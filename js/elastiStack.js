@@ -250,6 +250,10 @@ ElastiStack.prototype._moveAway = function( instance ) {
             //$(tt).remove();
           var liArray =ul.children();
           for(var i=0; i<liArray.length; i++){
+               if($(liArray[i]).css("z-index") == "-1")
+            {
+                $(liArray[i]).remove();
+            }
               if($(liArray[i]).html() == $(tt).html())
               {
                   debugger;
@@ -260,6 +264,9 @@ ElastiStack.prototype._moveAway = function( instance ) {
                   }
               }
           }
+          
+          
+          
           debugger;
             return $(ul).children().length;
     }
