@@ -7,12 +7,12 @@ $(document).ready(function(){
         if(left!="matrix(1, 0, 0, 1, 0, 0)"){
              $("#leftMenu").css("transform","translateX(0px)");
              var currentWidth = $("#wrapper").width();
-            currentWidth-=300;
+            currentWidth-=200;
         if($(window).width()<768)
         {
           $(".left-side").css("width",currentWidth);
           $(".left-side").css("float","right");
-            $(".left-side").css("left","300px");
+            $(".left-side").css("left","200px");
         }
             $("#wrapper").css("width",currentWidth);
             $("#wrapper").css("float","right");
@@ -21,9 +21,9 @@ $(document).ready(function(){
             console.log(currentWidth);
         }
         else{
-            $("#leftMenu").css("transform","translateX(-300px)");
+            $("#leftMenu").css("transform","translateX(-200px)");
                 var currentWidth = $("#wrapper").width();
-            currentWidth+=300;
+            currentWidth+=200;
          if($(window).width()<768)
          {
            $(".left-side").css("width",currentWidth);
@@ -60,7 +60,7 @@ $(document).ready(function(){
             var right = $("#rightMenu").css("transform");
         if(right!="matrix(1, 0, 0, 1, 0, 0)"){
              $("#rightMenu").css("transform","translateX(0px)");
-            $("#wrapper").css("left","-300px");
+            $("#wrapper").css("left","-200px");
         }
         else{
             $("#rightMenu").css("transform","translateX(300px)");
