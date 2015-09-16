@@ -20,7 +20,7 @@
     <!--Styles-->
      <link href="css/style.css" rel="stylesheet">
   </head>
-<body>
+<body onload="loaded();">
     <div id="leftMenu">
     	<a href="" class="left-menu-home">Home</a>
         <a href="" class="left-menu-home">Another Option</a>
@@ -76,6 +76,7 @@
                 </div>
             </div>
         </div>
+            <div class="clear"></div>
             </span>
         <div class="photo-player" id="numero2">
         	<ul  id="elasticstack" class="elasticstack">
@@ -102,6 +103,7 @@
                     <div class="updown labelDisLike">No</div>
                 </li>
 			</ul>
+            <div class="clear"></div>
         </div>
         <div class="no-more-items">
                 
@@ -149,6 +151,11 @@
 	<script>
 		new ElastiStack( document.getElementById( 'elasticstack' ) );
 	</script>
+    <script>
+     function loaded(){
+        //$(".vc").width("30%");
+     }
+    </script>
 </body>
 </html>
 

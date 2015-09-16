@@ -1,3 +1,4 @@
+
 a{
 	text-decoration: none;
 }
@@ -131,8 +132,8 @@ a{
          -o-transform: translateY(0px);
             transform: translateY(0px);
 }
-.vert-carousel{
-	width: 30%;
+.vert-carousel[style]{
+	width: 100%;
 	height: calc(100vh - 40px);
 	float: left;
 	overflow-y: hidden;
@@ -140,18 +141,29 @@ a{
 	padding-left: 15px;
 	padding-right: 15px;
 }
-.vert-carousel .car-item{
+
+   .vc{
+        display: block;
+        float: left;
+    }
+
+.vert-carousel .car-item[style]{
 	margin-bottom:10px;
 	display:inline-block;
 }
-.vert-carousel .car-item img{
+.vert-carousel .car-item img[style]{
 	width: 100%;
 	height: auto;
-}.vert-carousel .car-item .car-item-name {
+}.vert-carousel .car-item .car-item-name[style] {
 	font-family: Open Sans;
 	font-weight: 100;
 	font-size: 0.9em;
 	line-height: 0.9em;
+    width: auto !important;
+    height: auto !important;
+    float:left !important;
+    display: inline-block !important;
+    position: absolute !important;
 }
 .top-navigation-bar {
 	width: 100%;
@@ -343,7 +355,7 @@ a{
         display: block;
         height: 256px;
         width: 255px;
-        overflow-x: hidden;
+        overflow: hidden;
     }
     .photo-player {
         width: 100%;
@@ -356,6 +368,7 @@ a{
         display: block;
         width: 256px;
         margin: 0 auto;
+        float: none;
     }
 }
 
