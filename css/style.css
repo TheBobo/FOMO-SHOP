@@ -155,8 +155,8 @@ a{
          -o-transform: translateY(0px);
             transform: translateY(0px);
 }
-.vert-carousel[style]{
-	width: 100%;
+.vert-carousel{
+	width: 30%;
 	height: calc(100vh - 40px);
 	float: left;
 	overflow-y: hidden;
